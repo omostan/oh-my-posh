@@ -4,10 +4,10 @@
 
 Personal [Oh My Posh](https://ohmyposh.dev) prompt themes.
 
-| Theme | File |
-| --- | --- |
-| kushal | [`themes/kushal.omp.json`](themes/kushal.omp.json) |
-| sunspor | [`themes/sunspor.omp.json`](themes/sunspor.omp.json) |
+| Theme | File | Preview |
+| --- | --- | --- |
+| kushal | [`themes/kushal.omp.json`](themes/kushal.omp.json) | ![kushal preview](images/kushal.png) |
+| sunspor | [`themes/sunspor.omp.json`](themes/sunspor.omp.json) | ![sunspor preview](images/sunspor.png) |
 
 ## Prerequisites
 
