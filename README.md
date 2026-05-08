@@ -4,10 +4,12 @@
 
 Personal [Oh My Posh](https://ohmyposh.dev) prompt themes.
 
-| Theme | File | Preview |
-| --- | --- | --- |
-| kushal | [`themes/kushal.omp.json`](themes/kushal.omp.json) | ![kushal preview](images/kushal.png) |
-| sunspor | [`themes/sunspor.omp.json`](themes/sunspor.omp.json) | ![sunspor preview](images/sunspor.png) |
+Themes are organized by Oh My Posh schema version. The v4 variant is the recommended default; v3 is kept for users still on the older schema.
+
+| Theme | v4 (default) | v3 | Preview |
+| --- | --- | --- | --- |
+| kushal | [`themes/v4/kushal.omp.json`](themes/v4/kushal.omp.json) | [`themes/v3/kushal.omp.json`](themes/v3/kushal.omp.json) | ![kushal preview](images/kushal.png) |
+| sunspor | [`themes/v4/sunspor.omp.json`](themes/v4/sunspor.omp.json) | [`themes/v3/sunspor.omp.json`](themes/v3/sunspor.omp.json) | ![sunspor preview](images/sunspor.png) |
 
 ## Prerequisites
 
@@ -29,7 +31,7 @@ Point `oh-my-posh init` at a theme file in this repo from your shell's startup s
 Edit `$PROFILE`:
 
 ```powershell
-oh-my-posh init pwsh --config 'D:\oh-my-posh\themes\kushal.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'D:\oh-my-posh\themes\v4\kushal.omp.json' | Invoke-Expression
 ```
 
 ### Bash
@@ -37,7 +39,7 @@ oh-my-posh init pwsh --config 'D:\oh-my-posh\themes\kushal.omp.json' | Invoke-Ex
 In `~/.bashrc` (or `~/.bash_profile` on macOS):
 
 ```bash
-eval "$(oh-my-posh init bash --config ~/oh-my-posh/themes/kushal.omp.json)"
+eval "$(oh-my-posh init bash --config ~/oh-my-posh/themes/v4/kushal.omp.json)"
 ```
 
 ### Zsh
@@ -45,7 +47,7 @@ eval "$(oh-my-posh init bash --config ~/oh-my-posh/themes/kushal.omp.json)"
 In `~/.zshrc`:
 
 ```bash
-eval "$(oh-my-posh init zsh --config ~/oh-my-posh/themes/kushal.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/oh-my-posh/themes/v4/kushal.omp.json)"
 ```
 
 ### Fish
@@ -53,7 +55,7 @@ eval "$(oh-my-posh init zsh --config ~/oh-my-posh/themes/kushal.omp.json)"
 In `~/.config/fish/config.fish`:
 
 ```fish
-oh-my-posh init fish --config ~/oh-my-posh/themes/kushal.omp.json | source
+oh-my-posh init fish --config ~/oh-my-posh/themes/v4/kushal.omp.json | source
 ```
 
 ### Cmd (via Clink)
@@ -61,7 +63,7 @@ oh-my-posh init fish --config ~/oh-my-posh/themes/kushal.omp.json | source
 In `oh-my-posh.lua` inside your Clink scripts directory. Use a full path — `~` is not expanded:
 
 ```lua
-load(io.popen('oh-my-posh init cmd --config C:/path/to/oh-my-posh/themes/kushal.omp.json'):read("*a"))()
+load(io.popen('oh-my-posh init cmd --config C:/path/to/oh-my-posh/themes/v4/kushal.omp.json'):read("*a"))()
 ```
 
 ### Nushell
@@ -69,7 +71,7 @@ load(io.popen('oh-my-posh init cmd --config C:/path/to/oh-my-posh/themes/kushal.
 In `$nu.config-path`:
 
 ```nushell
-oh-my-posh init nu --config ~/oh-my-posh/themes/kushal.omp.json
+oh-my-posh init nu --config ~/oh-my-posh/themes/v4/kushal.omp.json
 ```
 
 ### Elvish
@@ -77,7 +79,7 @@ oh-my-posh init nu --config ~/oh-my-posh/themes/kushal.omp.json
 In `~/.elvish/rc.elv`:
 
 ```elvish
-eval (oh-my-posh init elvish --config ~/oh-my-posh/themes/kushal.omp.json)
+eval (oh-my-posh init elvish --config ~/oh-my-posh/themes/v4/kushal.omp.json)
 ```
 
 ### Xonsh
@@ -85,7 +87,7 @@ eval (oh-my-posh init elvish --config ~/oh-my-posh/themes/kushal.omp.json)
 In `~/.xonshrc`:
 
 ```python
-execx($(oh-my-posh init xonsh --config ~/oh-my-posh/themes/kushal.omp.json))
+execx($(oh-my-posh init xonsh --config ~/oh-my-posh/themes/v4/kushal.omp.json))
 ```
 
 After editing your startup file, restart the shell (or `source` it) to load the prompt.
