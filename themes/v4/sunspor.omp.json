@@ -397,10 +397,10 @@
           "invert_powerline": true,
           "leading_diamond": "\ue0b2",
           "options": {
-            "time_format": "_2,15:04"
+            "time_format": "_2.01.0000,15:04"
           },
           "style": "diamond",
-          "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+          "template": " \uf073 {{ dateInZone \"06-01-02\" (now) \"UTC\" | date \"02.01.06,15:04\" }} ",
           "trailing_diamond": "\ue0b4",
           "type": "time"
         }
@@ -450,5 +450,6 @@
     "foreground": "#d6deeb",
     "template": "\ue285 "
   },
+  "author": "Stanley Omoregie",
   "version": 4
 }
