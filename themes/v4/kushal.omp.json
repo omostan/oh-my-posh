@@ -1,13 +1,42 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "console_title_template": "{{ if .Root }}root @ {{ end }}{{ .Shell }} in {{ .Folder }}",
+  "palette": {
+      "davy-grey": "#575656",
+      "light-grey": "#D6DEEB",
+      "dark-grey": "#99908A",
+      "charcoal-grey": "#414141",
+      "sky-blue": "#00C7FC",
+      "black-pearl": "#011627",
+      "reddish-orange": "#EF541C",
+      "ultramarine-blue": "#516BEB",
+      "aquamarine-blue": "#79DFE1",
+      "white": "#ffffff",
+      "green-white": "#E8EAEE",
+      "spanish-white": "#F2D3B6",
+      "sea-green": "#1E9748",
+      "light-gold": "#FFDE57",
+      "aqua-blue": "#03DED3",
+      "cyan-blue": "#193549",
+      "marine-blue": "#7FD5EA",
+      "carmine-pink": "#E44141",
+      "light-pink": "#FEF5ED",
+      "pale-aqua": "#B6D6F2",
+      "git-background": "#1BD4CD",
+      "git-foreground": "#193549",
+      "git-modified": "#FF9248",
+      "git-diverged": "#FF4500",
+      "git-ahead": "#B787D7",
+      "git-behind": "#B787D7",
+      "git-clean": "#CAEBE1"
+  },
   "blocks": [
     {
       "alignment": "left",
       "segments": [
         {
-          "background": "#575656",
-          "foreground": "#D6DEEB",
+          "background": "p:davy-grey",
+          "foreground": "p:light-grey",
           "leading_diamond": "\ue0b6",
           "options": {
             "alpine": "\uf300",
@@ -31,35 +60,35 @@
           "type": "os"
         },
         {
-          "background": "#00C7FC",
-          "foreground": "#011627",
+          "background": "p:sky-blue",
+          "foreground": "p:black-pearl",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
           "template": " \uf489 {{ .UserName }} ",
           "type": "shell"
         },
         {
-          "background": "#EF541C",
-          "foreground": "#D6DEEB",
+          "background": "p:reddish-orange",
+          "foreground": "p:light-grey",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
           "template": " \uf09c admin ",
           "type": "root"
         },
         {
-          "background": "#516BEB",
-          "foreground": "#ffffff",
+          "background": "p:ultramarine-blue",
+          "foreground": "p:white",
           "style": "diamond",
           "template": "\ue266 MEM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 ",
-	      "trailing_diamond": "\ue0b0",
+          "trailing_diamond": "\ue0b0",
           "type": "sysinfo"
         },
         {
           "type": "cmake",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#E8EAEE",
-          "background": "#1E9748",
+          "foreground": "p:green-white",
+          "background": "p:sea-green",
           "template": " \ue61e \ue61d cmake {{ .Full }} "
         },
         {
@@ -69,35 +98,35 @@
           "options": {
             "display_mode": "context"
           },
-          "foreground": "#011627",
-          "background": "#FFDE57",
+          "foreground": "p:black-pearl",
+          "background": "p:light-gold",
           "template": " \ue73c {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} "
         },
         {
           "type": "go",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#7FD5EA",
+          "foreground": "p:white",
+          "background": "p:marine-blue",
           "template": " \u202d\ue626 {{ .Full }} "
         },
         {
           "type": "rust",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#193549",
-          "background": "#99908A",
+          "foreground": "p:cyan-blue",
+          "background": "p:dark-grey",
           "template": " \ue7a8 {{ .Full }} "
         },
         {
-          "background": "#1BD4CD",
+          "background": "p:git-background",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#16B1AC{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#16B1AC{{ end }}",
-            "{{ if gt .Ahead 0 }}#B787D7{{ end }}",
-            "{{ if gt .Behind 0 }}#B787D7{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-modified{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}",
+            "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}",
+            "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
           ],
-          "foreground": "#011627",
+          "foreground": "p:git-foreground",
           "powerline_symbol": "\ue0b0",
           "options": {
             "branch_icon": "\ue725 ",
@@ -107,7 +136,7 @@
             "fetch_worktree_count": true
           },
           "style": "powerline",
-          "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ url .HEAD .UpstreamURL }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#CAEBE1> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ url .HEAD .UpstreamURL }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<p:git-clean> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         }
       ],
@@ -117,13 +146,13 @@
       "alignment": "right",
       "segments": [
         {
-          "background": "#03DED3",
+          "background": "p:aqua-blue",
           "background_templates": [
-            "{{ if gt .Code 0 }}#E44141{{ end }}"
+            "{{ if gt .Code 0 }}p:carmine-pink{{ end }}"
           ],
-          "foreground": "#414141",
+          "foreground": "p:charcoal-grey",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#D6DEEB{{ end }}"
+            "{{ if gt .Code 0 }}p:light-grey{{ end }}"
           ],
           "leading_diamond": "\ue0b6",
           "options": {
@@ -134,8 +163,8 @@
           "type": "status"
         },
         {
-          "background": "#575656",
-          "foreground": "#D6DEEB",
+          "background": "p:davy-grey",
+          "foreground": "p:light-grey",
           "options": {
             "style": "roundrock",
             "threshold": 0
@@ -153,23 +182,23 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#D6DEEB",
+          "foreground": "p:light-grey",
           "style": "plain",
           "template": "\u256d\u2500",
           "type": "text"
         },
         {
-          "foreground": "#F2D3B6",
+          "foreground": "p:spanish-white",
           "options": {
-            "time_format": "<#D6DEEB>\ue641 15:04:05</> <#79DFE1>|</> \uf073 2 Jan, Monday"
+            "time_format": "<p:light-grey>\ue641 15:04:05</> <p:aquamarine-blue>|</> \uf073 2 Jan, Monday"
           },
           "style": "plain",
-          "template": "{{ .CurrentDate | date .Format }} <#79DFE1>|</>",
+          "template": "{{ .CurrentDate | date .Format }} <p:aquamarine-blue>|</>",
           "type": "time"
         },
         {
-          "foreground": "#B6D6F2",
-          "leading_diamond": "<#00C7FC> \uf07b </><#B6D6F2> in </>",
+          "foreground": "p:pale-aqua",
+          "leading_diamond": "<p:sky-blue> \uf07b </><p:pale-aqua> in </>",
           "options": {
             "folder_icon": " \uf07c ",
             "folder_separator_icon": " \uf061 ",
@@ -189,13 +218,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#D6DEEB",
+          "foreground": "p:light-grey",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
         },
         {
-          "foreground": "#D6DEEB",
+          "foreground": "p:light-grey",
           "options": {
             "always_enabled": true
           },
@@ -210,12 +239,12 @@
   "osc99": true,
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#FEF5ED",
+    "foreground": "p:light-pink",
     "template": "\ue285 "
   },
   "secondary_prompt": {
     "background": "transparent",
-    "foreground": "#D6DEEB",
+    "foreground": "p:light-grey",
     "template": "\u2570\u2500\u276f "
   },
   "author": "Stanley Omoregie",
